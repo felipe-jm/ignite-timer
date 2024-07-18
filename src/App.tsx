@@ -1,3 +1,12 @@
+import { Button } from "./components/Button";
+
 export function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <>
+      <Button variant="danger">Teste</Button>
+      <Button variant="success">Teste</Button>
+      <Button variant="primary">Teste</Button>
+      <Button variant="secondary">Teste</Button>
+    </>
+  );
 }
