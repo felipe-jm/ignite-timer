@@ -23,6 +23,7 @@ export function cycleReducer(state: CyclesState, action: any) {
         draft.cycles.push(action.payload.newCycle);
         draft.activeCycleId = action.payload.newCycle.id;
       });
+
     case ActionTypes.INTERRUPT_CURRENT_CYCLE: {
       const currentCycleIndex = state.cycles.findIndex(
         (cycle) => cycle.id === state.activeCycleId
@@ -37,6 +38,7 @@ export function cycleReducer(state: CyclesState, action: any) {
         draft.cycles[currentCycleIndex].interruptedDate = new Date();
       });
     }
+
     case ActionTypes.MARK_CURRENT_CYCLE_AS_FINISHED: {
       const currentCycleIndex = state.cycles.findIndex(
         (cycle) => cycle.id === state.activeCycleId
@@ -51,6 +53,7 @@ export function cycleReducer(state: CyclesState, action: any) {
         draft.cycles[currentCycleIndex].finishedDate = new Date();
       });
     }
+
     default:
       return state;
   }
